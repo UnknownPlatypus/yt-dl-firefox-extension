@@ -20,8 +20,8 @@ You can configure youtube-dl to download only audio, or convert into any desired
 ## Prerequisites
 
 1. Needs [youtube-dl](https://github.com/rg3/youtube-dl) installed.
-1. Needs python installed.
-1. This has only been tested on Ubuntu linux, but should ideally work on all platforms where youtube-dl works. You will need to change the path for the `firefox_command_runner.json` for other platforms.
+2. Needs [python](https://www.python.org/downloads/windows/) installed.
+3. This has only been tested on Windows. Mac & Linux users might have to make some changes
 
 ## How to install Youtube Dl Firefox Addon
 
