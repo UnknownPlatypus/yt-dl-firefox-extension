@@ -13,7 +13,7 @@
 
 ## What Youtube Dl Firefox Addon does
 
-This is a firefox addon to which downloads youtube videos using [youtube-dl](https://github.com/rg3/youtube-dl).
+This is a firefox addon to which downloads youtube videos or audio using [youtube-dl](https://github.com/rg3/youtube-dl).
 
 You can configure youtube-dl to download only audio, or convert into any desired format after installing, or even download full youtube playlists. These options are controlled via youtube-dl's own [configuration](https://github.com/ytdl-org/youtube-dl#configuration)
 
