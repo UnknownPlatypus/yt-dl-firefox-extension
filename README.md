@@ -1,7 +1,7 @@
 # ![youtube-dl-firefox-addon](./add-on/icons/YTicon.png)Youtube-dl Firefox Addon
- - Firefox addon to download youtube videos using [youtube-dl](https://github.com/rg3/youtube-dl)
+ Firefox extension to download videos/audio from Youtube and others using [youtube-dl](https://github.com/rg3/youtube-dl)
 
-[![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-green.svg)]
+![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-green.svg)
 
 ## Table of Contents
 
@@ -9,7 +9,6 @@
  * [Prerequisites](#prerequisites)
  * [How to install Youtube Dl Firefox Addon](#how-to-install-youtube-dl-firefox-addon)
  * [How to use this addon](#how-to-use-this-addon)
- * [Donations](#donations)
  * [License](#license)
 
 ## What Youtube Dl Firefox Addon does
@@ -38,11 +37,6 @@ You can configure youtube-dl to download only audio, or convert into any desired
 1. Press the addon's logo in the toolbar once. (The logo looks like a YouTube icon).
 1. The video will be downloaded automatically in the background.
 1. After the download is finished, you will get a notification saying the download has finished. For the download locations, format, etc, please see youtube-dl's own [configuration](https://github.com/ytdl-org/youtube-dl#configuration)
-
-## Donations
-If you like this project, buy me a cup of coffee! :)
-
-[![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=UY6TVJXST724J)
 
 ## License
 
