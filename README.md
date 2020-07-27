@@ -1,7 +1,7 @@
 # ![youtube-dl-firefox-addon](./add-on/icons/YTicon.png)Youtube-dl Firefox Addon
  Firefox extension to download videos/audio from Youtube and others using [youtube-dl](https://github.com/rg3/youtube-dl)
 
-![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-green.svg)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Table of Contents
 
