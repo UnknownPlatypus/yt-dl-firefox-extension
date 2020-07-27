@@ -1,16 +1,16 @@
 {
 
-  "description": "Run native linux commands from firefox",
+  "description": "Run yt-dl command-line program from firefox",
   "manifest_version": 2,
   "name": "Command Runner",
   "version": "1.4",
   "icons": {
-    "48": "icons/message.svg"
+    "48": "icons/YTIcon.png"
   },
 
   "browser_specific_settings": {
     "gecko": {
-      "id": "firefox_command_runner@example.org",
+      "id": "yt_dl_firefox_command_runner@test.com",
       "strict_min_version": "57.0"
     }
   },

@@ -1,3 +1,3 @@
 @echo off
 
-call python C:\Users\Thibaut\Desktop\yt-dl\app\firefox_command_runner.py
+call python C:\Users\Thiba\Desktop\yt-dl-firefox-extension\app\firefox_command_runner.py
