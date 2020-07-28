@@ -1,11 +1,10 @@
 {
-
   "description": "Run yt-dl command-line program from firefox",
   "manifest_version": 2,
-  "name": "Command Runner",
+  "name": "Yt-dl Addon for Windows",
   "version": "1.4",
   "icons": {
-    "48": "icons/YTIcon.png"
+    "128": "icons/YT_icon.png"
   },
 
   "browser_specific_settings": {
@@ -20,7 +19,7 @@
   },
 
   "browser_action": {
-    "default_icon": "icons/YTIcon.png",
+    "default_icon": "icons/YT_icon.png",
     "default_title": "Youtube-dl",
     "default_popup" :"index.html"
   },
