@@ -1,17 +1,18 @@
 # ![youtube-dl-firefox-addon](./add-on/icons/YTicon.png)Youtube-dl Firefox Addon
- Firefox extension to download videos/audio from Youtube and others using [youtube-dl](https://github.com/rg3/youtube-dl)
+ Firefox extension to download videos/audio from Youtube and others video websites using [youtube-dl](https://github.com/rg3/youtube-dl)
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Table of Contents
 
- * [What Youtube Dl Firefox Addon does](#what-youtube-dl-firefox-addon-does)
+ * [Description](#Description)
  * [Prerequisites](#prerequisites)
- * [How to install Youtube Dl Firefox Addon](#how-to-install-youtube-dl-firefox-addon)
+ * [Installation](#Installation)
  * [How to use this addon](#how-to-use-this-addon)
+ * [Contributing](#Contributing)
  * [License](#license)
 
-## What Youtube Dl Firefox Addon does
+## Description
 
 This is a firefox addon to which downloads youtube videos or audio using [youtube-dl](https://github.com/rg3/youtube-dl).
 
@@ -23,7 +24,7 @@ You can configure youtube-dl to download only audio, or convert into any desired
 2. Needs [python](https://www.python.org/downloads/windows/) installed.
 3. This has only been tested on Windows. Mac & Linux users might have to make some changes
 
-## How to install Youtube Dl Firefox Addon
+## Installation
 
 1. Clone this repo
 2. Install the add on from [Firefox Addons Website](https://addons.mozilla.org/en-US/firefox/addon/youtube-dl-for-linux/). Or you can install the addon [command_runner-1.0-an+fx-linux.xpi](./command_runner-1.0-an+fx-linux.xpi?raw=true) from this repo to firefox by double-clicking.
@@ -38,6 +39,13 @@ You can configure youtube-dl to download only audio, or convert into any desired
 1. The video will be downloaded automatically in the background.
 1. After the download is finished, you will get a notification saying the download has finished. For the download locations, format, etc, please see youtube-dl's own [configuration](https://github.com/ytdl-org/youtube-dl#configuration)
 
+## Contributing
+ 
+1. Fork it!
+2. Create your feature branch: `git checkout -b my-new-feature`
+3. Commit your changes: `git commit -am 'Add some feature'`
+4. Push to the branch: `git push origin my-new-feature`
+5. Submit a pull request :D
 ## License
 
 This program is Youtube Dl Firefox Addon

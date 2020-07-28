@@ -1,0 +1,24 @@
+root - WARNING - [youtube] hC8CH0Z3L54: Downloading webpage
+[youtube] hC8CH0Z3L54: Downloading js player f82a8c37
+[youtube] hC8CH0Z3L54: Downloading js player f82a8c37
+[download] Destination: D:\Downloads\Fkj & Masego - Tadow.m4a
+
+[download]   0.0% of 7.51MiB at 100.63KiB/s ETA 01:16
+[download]   0.0% of 7.51MiB at 301.89KiB/s ETA 00:25
+[download]   0.1% of 7.51MiB at 704.42KiB/s ETA 00:10
+[download]   0.2% of 7.51MiB at  1.47MiB/s ETA 00:05 
+[download]   0.4% of 7.51MiB at 776.47KiB/s ETA 00:09
+[download]   0.8% of 7.51MiB at  1.23MiB/s ETA 00:06 
+[download]   1.7% of 7.51MiB at  1.55MiB/s ETA 00:04 
+[download]   3.3% of 7.51MiB at  2.26MiB/s ETA 00:03 
+[download]   6.6% of 7.51MiB at  3.21MiB/s ETA 00:02 
+[download]  13.3% of 7.51MiB at  5.00MiB/s ETA 00:01 
+[download]  26.6% of 7.51MiB at  6.18MiB/s ETA 00:00 
+[download]  53.3% of 7.51MiB at  8.69MiB/s ETA 00:00 
+[download] 100.0% of 7.51MiB at  9.75MiB/s ETA 00:00 
+[download] 100% of 7.51MiB in 00:00                  
+[ffmpeg] Correcting container in "D:\Downloads\Fkj & Masego - Tadow.m4a"
+
+root - WARNING - Destination: D:\Downloads\Fkj & Masego - Tadow.m4a
+root - WARNING - Download : 100% of 7.51MiB in 00:00
+root - WARNING - ['Destination: D:\\Downloads\\Fkj & Masego - Tadow.m4a', 'Download : 100% of 7.51MiB in 00:00']
