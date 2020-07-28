@@ -29,7 +29,6 @@
     "nativeMessaging",
     "notifications",
     "activeTab",
-    "cookies",
     "<all_urls>",
     "tabs"
   ]
