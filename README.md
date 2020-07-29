@@ -14,23 +14,26 @@
 
 ## Description
 
-This is a firefox addon to which downloads youtube videos or audio using [youtube-dl](https://github.com/rg3/youtube-dl).
+This is a firefox addon helping you downloads youtube videos or audio using [youtube-dl](https://github.com/rg3/youtube-dl).
+Simply use the addon while browsing youtube to download the audio or video.
 
-You can configure youtube-dl to download only audio, or convert into any desired format after installing, or even download full youtube playlists. These options are controlled via youtube-dl's own [configuration](https://github.com/ytdl-org/youtube-dl#configuration)
+You can configure youtube-dl to download only audio, or convert into any desired format (mp3,wav,...) using FFMPEG, or download full video in any available quality, or even download full youtube playlists. 
+
+The addon only display most commun format : m4a (Native audio format for YT), mp3(classical audio compression format) and mp4 (native vidéo format for YT)
 
 ## Prerequisites
 
-1. Needs [youtube-dl](https://github.com/rg3/youtube-dl) installed.
-2. Needs [python](https://www.python.org/downloads/windows/) installed.
-3. This has only been tested on Windows. Mac & Linux users might have to make some changes
+1. Needs [python](https://www.python.org/downloads/windows/) installed. 
+2. Needs [youtube-dl](https://github.com/rg3/youtube-dl) installed.
+3. Needs [FFMPEG](https://ffmpeg.zeranoe.com/builds/) installed (needed to do mp3 conversion)
+4. This has only been tested on Windows. Mac & Linux users might have to make some changes
 
 ## Installation
 
 1. Clone this repo
 2. Install the add on from [Firefox Addons Website](https://addons.mozilla.org/en-US/firefox/addon/youtube-dl-for-linux/). Or you can install the addon [command_runner-1.0-an+fx-linux.xpi](./command_runner-1.0-an+fx-linux.xpi?raw=true) from this repo to firefox by double-clicking.
 3. Edit the file [firefox_command_runner.json](./app/firefox_command_runner.json) and edit the `path` to the location of the file `./app/firefox-command-runner.py` (i.e., where you cloned this repo to.).
-4. Edit the [local youtube-dl config](config) to fit your needs or delete it to use youtube-dl's global configuration
-5. Copy the file `firefox_command_runner.json` to the folder `/home/<username>/.mozilla/native-messaging-hosts/` (replace `<username>` wtih your own username. Create the folder if it does not exist).
+4. Add a registry entry `firefox_command_runner.json` to the folder `/home/<username>/.mozilla/native-messaging-hosts/` (replace `<username>` wtih your own username. Create the folder if it does not exist).
 
 ## How to use this addon
 
