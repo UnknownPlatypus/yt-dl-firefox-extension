@@ -31,10 +31,14 @@ except OSError:
 else:
     print ("Successfully created the directory %s " % path2)
 
-"""
 
 # Move necessary files to this folder
-source=pathlib.Path.cwd()/'FFMPEG'
-shutil.move(source.__str__(),"C:\\youtube_dl\\FFMPEG")
-user=os.getlogin()
-print(user)
+source=pathlib.Path(__file__).parent.absolute()/'FFMPEG'
+shutil.move(source.__str__(),"C:\\youtube_dl")
+"""
+# Add FFMPEG to Path
+print(os.environ['PATH'])
+#os.environ['PATH'] = "C:\\youtube_dl\\FFMPEG\\bin" + os.pathsep + os.environ['PATH']
+print(os.environ['PATH'])
+#user=os.getlogin()
+#print(user)
