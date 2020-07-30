@@ -1,7 +1,7 @@
 {
   "name": "firefox_command_runner",
   "description": "Run yt-dl command-line program from firefox",
-  "path": "C:\\Users\\Thiba\\Desktop\\yt-dl-firefox-extension\\app\\firefox_command_runner_win.bat",
+  "path": "C:\\youtube_dl\\app\\firefox_command_runner_win.bat",
   "type": "stdio",
   "allowed_extensions": [ "yt_dl_firefox_command_runner@test.com" ]
 }

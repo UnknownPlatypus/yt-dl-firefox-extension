@@ -40,12 +40,11 @@ while True:
 
     # exec yt_dl program
     if(audio_format=='m4a'):
-        yt_dl = subprocess.run('youtube-dl -f bestaudio[ext=m4a] --no-mtime -w -o ~/Downloads/%(title)s.%(ext)s '+url,shell=True,capture_output=True,text=True)
+        yt_dl = subprocess.run('youtube-dl -f bestaudio[ext=m4a] --ffmpeg-location C:/youtube_dl/FFMPEG/bin --no-mtime -w -o ~/Downloads/%(title)s.%(ext)s '+url,shell=True,capture_output=True,text=True)
     elif(audio_format=='mp3'):
-        yt_dl = subprocess.run('youtube-dl -f bestaudio[ext=m4a] --no-mtime -w -o ~/Downloads/%(title)s.%(ext)s --extract-audio --audio-format "mp3" '+url,shell=True,capture_output=True,text=True)
+        yt_dl = subprocess.run('youtube-dl -f bestaudio[ext=m4a] --ffmpeg-location C:/youtube_dl/FFMPEG/bin --no-mtime -w -o ~/Downloads/%(title)s.%(ext)s --extract-audio --audio-format "mp3" '+url,shell=True,capture_output=True,text=True)
     else:
-        yt_dl = subprocess.run('youtube-dl -f bestvideo[ext=mp4]+bestaudio[ext=m4a] --no-mtime -w -o ~/Downloads/%(title)s.%(ext)s '+url,shell=True,capture_output=True,text=True)
-    
+        yt_dl = subprocess.run('youtube-dl -f bestvideo[ext=mp4]+bestaudio[ext=m4a] --ffmpeg-location C:/youtube_dl/FFMPEG/bin --no-mtime -w -o ~/Downloads/%(title)s.%(ext)s '+url,shell=True,capture_output=True,text=True)
     logging.warning(yt_dl.stdout)
 
     # Gather logs send a notification when download ends
