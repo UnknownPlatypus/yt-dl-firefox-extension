@@ -4,6 +4,7 @@ import subprocess
 import os
 import shutil
 import pathlib
+import winreg
 
 """
 ########## Installer youtube-dl ##########
@@ -70,5 +71,21 @@ f.close()
 #Move Files to youtube-dl folder
 sourceApp=pathlib.Path(__file__).parent.parent.absolute()/'app'
 shutil.move(sourceApp.__str__(),"C:\\youtube_dl")
-"""
+
 # Add Native Messaging Registry Keys
+# CURRENT_USER
+a_Key = winreg.OpenKey(winreg.HKEY_CURRENT_USER,"Software\\Mozilla\\NativeMessagingHosts\\firefox_command_runner", 0, winreg.KEY_ALL_ACCESS)
+winreg.SetValueEx(a_Key,"",0,winreg.REG_SZ,"C:\\youtube_dl\\app\\firefox_command_runner.json")
+winreg.CloseKey(a_Key)
+"""
+
+
+
+
+
+"""
+a_Key = winreg.OpenKey(winreg.HKEY_LOCAL_MACHINE,"Software\\Mozilla\\NativeMessagingHosts\\firefox_command_runner", 0, winreg.KEY_ALL_ACCESS)
+winreg.SetValueEx(a_Key,"",0,winreg.REG_SZ,"C:\\youtube_dl\\app\\firefox_command_runner.json")
+winreg.CloseKey(a_Key)
+"""
+
