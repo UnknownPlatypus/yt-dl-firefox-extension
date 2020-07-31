@@ -24,23 +24,21 @@ The addon only display most commun format : m4a (Native audio format for YT), mp
 ## Prerequisites
 
 1. Needs [python](https://www.python.org/downloads/windows/) installed. 
-2. Needs [youtube-dl](https://github.com/rg3/youtube-dl) installed.
-3. Needs [FFMPEG](https://ffmpeg.zeranoe.com/builds/) installed (needed to do mp3 conversion)
-4. This has only been tested on Windows. Mac & Linux users might have to make some changes
+2. This has only been tested on Windows. Mac & Linux users might have to make some changes
 
 ## Installation
 
-1. Clone this repo
-2. Install the add on from [Firefox Addons Website](https://addons.mozilla.org/en-US/firefox/addon/youtube-dl-for-linux/). Or you can install the addon [command_runner-1.0-an+fx-linux.xpi](./command_runner-1.0-an+fx-linux.xpi?raw=true) from this repo to firefox by double-clicking.
-3. Edit the file [firefox_command_runner.json](./app/firefox_command_runner.json) and edit the `path` to the location of the file `./app/firefox-command-runner.py` (i.e., where you cloned this repo to.).
-4. Add a registry entry `firefox_command_runner.json` to the folder `/home/<username>/.mozilla/native-messaging-hosts/` (replace `<username>` wtih your own username. Create the folder if it does not exist).
+1. Clone/Download this repository
+2. Run the setup_win.bat file to install youtube-dl and necessary dependancies 
+3. Install the add on from [Firefox Addons Website](https://addons.mozilla.org/en-US/firefox/addon/youtube-dl-for-linux/). Or you can install the addon [command_runner-1.0-an+fx-linux.xpi](./command_runner-1.0-an+fx-linux.xpi?raw=true) from this repo to firefox by double-clicking.
 
 ## How to use this addon
 
-1. Go to any youtube video page
-1. Press the addon's logo in the toolbar once. (The logo looks like a YouTube icon).
-1. The video will be downloaded automatically in the background.
-1. After the download is finished, you will get a notification saying the download has finished. For the download locations, format, etc, please see youtube-dl's own [configuration](https://github.com/ytdl-org/youtube-dl#configuration)
+1. Go to any youtube page
+2. Press the addon's logo in the toolbar, then select the format you want (m4a, mp3, mp4)
+3. The video/audio will be downloaded in the background
+4. After the download is finished, you will get a notification saying the download has finished. 
+Note: The default download location is the "Download" folder. If you want to change that, check youtube-dl's [configuration](https://github.com/ytdl-org/youtube-dl#configuration)
 
 ## Contributing
  
@@ -49,12 +47,21 @@ The addon only display most commun format : m4a (Native audio format for YT), mp
 3. Commit your changes: `git commit -am 'Add some feature'`
 4. Push to the branch: `git push origin my-new-feature`
 5. Submit a pull request :D
+
+## Youtube-dl command line program
+
+If you want to use youtube-dl from command line you need to add FFMPEG to system environnement variables.
+
+1. Go to "control Panel" > "System and Security" > "System"
+2. Go to "Advanced System Settings"
+3. Go to "Environement Variables"
+4. Now find "PATH" in the "System Variables" section and click "edit"
+5. Click "New" and write "C:\youtube_dl\FFMPEG\bin"
+6. Re-open your command prompt to commit changes
+
 ## License
 
 This program is Youtube Dl Firefox Addon
+
 Copyright (C) 2020  Thibaut Decombe
-This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
-
-This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
-
-You should have received a copy of the GNU General Public License along with this program. If not, see <http://www.gnu.org/licenses/>.
+Youtube Dl Firefox Addon is available under the MIT license. See the LICENSE file for more info.
