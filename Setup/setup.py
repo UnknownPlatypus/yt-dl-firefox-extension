@@ -6,36 +6,45 @@ import shutil
 import pathlib
 import winreg
 
-"""
+
+
+
 ########## Installer youtube-dl ##########
 yt_dl = subprocess.run('pip install youtube-dl --upgrade',shell=True,capture_output=True,text=True)
-# print(yt_dl.stdout)
+if yt_dl.returncode==0:
+    print("1. SUCCESS : " + yt_dl.stdout)
+else:
+    print("1. ERROR : " + yt_dl.stderr)
 
 
 
 ########## Installer FFMPEG ##########
 # Define a directory to install FFMPEG
 path1 = "C:/youtube_dl"
-path2 = "C:/youtube_dl/FFMPEG"
 
 try:
     os.mkdir(path1)
 except OSError:
-    print ("Creation of the directory %s failed" % path1)
+    print ("2. ERROR : Creation of the directory %s failed" % path1)
 else:
-    print ("Successfully created the directory %s " % path1)
+    print ("2. SUCCESS : Successfully created the directory %s " % path1)
 
-try:
-    os.mkdir(path2)
-except OSError:
-    print ("Creation of the directory %s failed" % path2)
-else:
-    print ("Successfully created the directory %s " % path2)
+
 
 
 # Move necessary files to this folder
 source=pathlib.Path(__file__).parent.absolute()/'FFMPEG'
-shutil.move(source.__str__(),"C:\\youtube_dl")
+
+try:
+    shutil.move(source.__str__(),"C:\\youtube_dl")
+except OSError as err:
+    print("3. ERROR :" + err)
+else:
+    print("3. SUCCESS : FFMPEG files were moved successfully")
+
+
+
+
 
 ########## Add default config to youtube-dl ##########
 
@@ -43,10 +52,11 @@ shutil.move(source.__str__(),"C:\\youtube_dl")
 dir_path = os.path.join(os.environ['APPDATA'],'youtube-dl')
 try:
     os.mkdir(dir_path)
-except OSError:
-    print ("Creation of the directory %s failed" % dir_path)
+except OSError as err2:
+    print ("4.1 ERROR : Creation of the directory %s failed" % dir_path)
+    print("4.1 ERROR : "+ err2)
 else:
-    print ("Successfully created the directory %s " % dir_path)
+    print ("4.1 SUCCESS : Successfully created the directory %s " % dir_path)
 
 # Create "config.txt"
 filepath=os.path.join(dir_path,"config.txt")
@@ -65,19 +75,34 @@ Lines=["# Lines starting with # are comments \n","\n",
 f.writelines(Lines)
 f.close()
 
+if os.path.isfile(filepath):
+    print("4.2 SUCCESS : config file was created")
+else:
+    print("4.2. ERROR : config file is missing")
 
 ########## Install command runner App ##########
 
-#Move Files to youtube-dl folder
+#Move App folder to youtube-dl folder
 sourceApp=pathlib.Path(__file__).parent.parent.absolute()/'app'
-shutil.move(sourceApp.__str__(),"C:\\youtube_dl")
+
+try:
+    shutil.move(sourceApp.__str__(),"C:\\youtube_dl")
+except OSError as err:
+    print("5.1 ERROR :" + err)
+else:
+    print("5.1 SUCCESS : App was installed successfully")
+
 
 # Add Native Messaging Registry Keys
 # CURRENT_USER
-a_Key = winreg.OpenKey(winreg.HKEY_CURRENT_USER,"Software\\Mozilla\\NativeMessagingHosts\\firefox_command_runner", 0, winreg.KEY_ALL_ACCESS)
-winreg.SetValueEx(a_Key,"",0,winreg.REG_SZ,"C:\\youtube_dl\\app\\firefox_command_runner.json")
-winreg.CloseKey(a_Key)
-"""
+try:
+    a_Key = winreg.OpenKey(winreg.HKEY_CURRENT_USER,"Software\\Mozilla\\NativeMessagingHosts\\firefox_command_runner", 0, winreg.KEY_ALL_ACCESS)
+    winreg.SetValueEx(a_Key,"",0,winreg.REG_SZ,"C:\\youtube_dl\\app\\firefox_command_runner.json")
+    winreg.CloseKey(a_Key)
+except OSError as err:
+    print("5.2 ERROR :" + err)
+else:
+    print("5.2 SUCCESS : Registry Key was created")
 
 
 
