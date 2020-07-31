@@ -7,8 +7,6 @@ import pathlib
 import winreg
 
 
-
-
 ########## Installer youtube-dl ##########
 yt_dl = subprocess.run('pip install youtube-dl --upgrade',shell=True,capture_output=True,text=True)
 if yt_dl.returncode==0:
@@ -40,7 +38,7 @@ try:
 except OSError as err:
     print("3. ERROR :" + err)
 else:
-    print("3. SUCCESS : FFMPEG files were moved successfully")
+    print("3. SUCCESS : FFMPEG was successfully installed to C:/youtube_dl/FFMPEG")
 
 
 
@@ -80,37 +78,31 @@ if os.path.isfile(filepath):
 else:
     print("4.2. ERROR : config file is missing")
 
+
 ########## Install command runner App ##########
 
 #Move App folder to youtube-dl folder
-sourceApp=pathlib.Path(__file__).parent.parent.absolute()/'app'
+sourceApp=pathlib.Path(__file__).resolve().parent.parent/'app'
+print(sourceApp)
 
 try:
     shutil.move(sourceApp.__str__(),"C:\\youtube_dl")
 except OSError as err:
-    print("5.1 ERROR :" + err)
+    print("5.1 ERROR :")
+    print(err)
 else:
-    print("5.1 SUCCESS : App was installed successfully")
+    print("5.1 SUCCESS : App was successfully installed to C:/youtube_dl/App")
 
 
 # Add Native Messaging Registry Keys
 # CURRENT_USER
 try:
-    a_Key = winreg.OpenKey(winreg.HKEY_CURRENT_USER,"Software\\Mozilla\\NativeMessagingHosts\\firefox_command_runner", 0, winreg.KEY_ALL_ACCESS)
+    winreg.CreateKey(winreg.HKEY_CURRENT_USER,"Software\\Mozilla\\NativeMessagingHosts\\firefox_command_runner")
+    a_Key = winreg.OpenKey(winreg.HKEY_CURRENT_USER,"Software\\Mozilla\\NativeMessagingHosts\\firefox_command_runner", 0, winreg.KEY_WRITE)
     winreg.SetValueEx(a_Key,"",0,winreg.REG_SZ,"C:\\youtube_dl\\app\\firefox_command_runner.json")
     winreg.CloseKey(a_Key)
 except OSError as err:
-    print("5.2 ERROR :" + err)
+    print("5.2 ERROR :")
+    print(err)
 else:
     print("5.2 SUCCESS : Registry Key was created")
-
-
-
-
-
-"""
-a_Key = winreg.OpenKey(winreg.HKEY_LOCAL_MACHINE,"Software\\Mozilla\\NativeMessagingHosts\\firefox_command_runner", 0, winreg.KEY_ALL_ACCESS)
-winreg.SetValueEx(a_Key,"",0,winreg.REG_SZ,"C:\\youtube_dl\\app\\firefox_command_runner.json")
-winreg.CloseKey(a_Key)
-"""
-
