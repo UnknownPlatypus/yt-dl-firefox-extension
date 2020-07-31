@@ -10,6 +10,7 @@
  * [Installation](#Installation)
  * [How to use this addon](#how-to-use-this-addon)
  * [Contributing](#Contributing)
+ * [Command line version](#Command-line-version)
  * [License](#license)
 
 ## Description
@@ -17,9 +18,9 @@
 This is a firefox addon helping you downloads youtube videos or audio using [youtube-dl](https://github.com/rg3/youtube-dl).
 Simply use the addon while browsing youtube to download the audio or video.
 
-You can configure youtube-dl to download only audio, or convert into any desired format (mp3,wav,...) using FFMPEG, or download full video in any available quality, or even download full youtube playlists. 
+You can configure youtube-dl to download only audio, or convert into any desired format (mp3,wav,...) using FFMPEG, or download full video in any available quality. You can even download full Youtube playlists !
 
-The addon only display most commun format : m4a (Native audio format for YT), mp3(classical audio compression format) and mp4 (native vidéo format for YT)
+The addon only display most commun formats : m4a (Native audio format for YT), mp3 (standard audio format) and mp4 (native video format for YT)
 
 ## Prerequisites
 
@@ -48,7 +49,7 @@ Note: The default download location is the "Download" folder. If you want to cha
 4. Push to the branch: `git push origin my-new-feature`
 5. Submit a pull request :D
 
-## Youtube-dl command line program
+## Command line version
 
 If you want to use youtube-dl from command line you need to add FFMPEG to system environnement variables.
 
