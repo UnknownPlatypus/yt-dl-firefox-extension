@@ -30,7 +30,7 @@ The addon only display most commun format : m4a (Native audio format for YT), mp
 
 1. Clone/Download this repository
 2. Run the setup_win.bat file to install youtube-dl and necessary dependancies 
-3. Install the add on from [Firefox Addons Website](https://addons.mozilla.org/en-US/firefox/addon/youtube-dl-for-linux/). Or you can install the addon [command_runner-1.0-an+fx-linux.xpi](./command_runner-1.0-an+fx-linux.xpi?raw=true) from this repo to firefox by double-clicking.
+3. Install the add on from [Firefox Addons Website](). Or you can install the addon [command_runner-1.0-an+fx-linux.xpi]() from this repo to firefox by double-clicking.
 
 ## How to use this addon
 
