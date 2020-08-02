@@ -64,11 +64,12 @@ Lines=["# Lines starting with # are comments \n","\n",
 "# Always extract audio \n",
 "-f bestaudio[ext=m4a] \n",
 "#-f 'bestvideo[ext=mp4]+bestaudio[ext=m4a] \n","\n",
-"# Do not copy the mtime \n"
-,"--no-mtime \n","\n",
-"# Save all videos under Movies directory in your home directory \n",
-"-o C:/Users/<username>/Downloads/%(title)s.%(ext)s",
-"# convert to mp3 \n","\n","# --extract-audio --audio-format mp3]"]
+"# Do not copy the mtime \n",
+"--no-mtime \n","\n",
+"# Save in Download directory \n",
+"-o ~/Downloads/%(title)s.%(ext)s \n","\n",
+"# convert to mp3 \n",
+"# --extract-audio --audio-format mp3]"]
 
 f.writelines(Lines)
 f.close()
