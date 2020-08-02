@@ -90,7 +90,7 @@ except OSError as err:
     print("5.1 ERROR :")
     print(err)
 else:
-    print("5.1 SUCCESS : App was successfully installed to C:/youtube_dl/App")
+    print("5.1 SUCCESS : App was successfully installed to C:/youtube_dl/app")
 
 
 # Add Native Messaging Registry Keys
