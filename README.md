@@ -9,8 +9,8 @@
  * [Prerequisites](#prerequisites)
  * [Installation](#Installation)
  * [How to use this addon](#how-to-use-this-addon)
- * [Contributing](#Contributing)
  * [Command line version](#Command-line-version)
+ * [Contributing](#Contributing)
  * [License](#license)
 
 ## Description
@@ -41,14 +41,6 @@ The addon only display most commun formats : m4a (Native audio format for YT), m
 4. After the download is finished, you will get a notification saying the download has finished. 
 Note: The default download location is the "Download" folder. If you want to change that, check youtube-dl's [configuration](https://github.com/ytdl-org/youtube-dl#configuration)
 
-## Contributing
- 
-1. Fork it!
-2. Create your feature branch: `git checkout -b my-new-feature`
-3. Commit your changes: `git commit -am 'Add some feature'`
-4. Push to the branch: `git push origin my-new-feature`
-5. Submit a pull request :D
-
 ## Command line version
 
 If you want to use youtube-dl from command line you need to add FFMPEG to system environnement variables.
@@ -60,9 +52,17 @@ If you want to use youtube-dl from command line you need to add FFMPEG to system
 5. Click "New" and write "C:\youtube_dl\FFMPEG\bin"
 6. Re-open your command prompt to commit changes
 
+## Contributing
+ 
+1. Fork it!
+2. Create your feature branch: `git checkout -b my-new-feature`
+3. Commit your changes: `git commit -am 'Add some feature'`
+4. Push to the branch: `git push origin my-new-feature`
+5. Submit a pull request :D
+
 ## License
 
 This program is Youtube Dl Firefox Addon
 
-Copyright (C) 2020  Thibaut Decombe
+Copyright (C) 2020  Thibaut Decombe. 
 Youtube Dl Firefox Addon is available under the MIT license. See the LICENSE file for more info.
