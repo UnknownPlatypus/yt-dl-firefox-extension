@@ -83,7 +83,6 @@ else:
 
 #Move App folder to youtube-dl folder
 sourceApp=pathlib.Path(__file__).resolve().parent.parent/'app'
-print(sourceApp)
 
 try:
     shutil.move(sourceApp.__str__(),"C:\\youtube_dl")
