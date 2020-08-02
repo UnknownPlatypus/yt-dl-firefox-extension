@@ -62,7 +62,8 @@ If you want to use youtube-dl from command line you need to add FFMPEG to system
 
 ## License
 
-This program is Youtube Dl Firefox Addon
+This program is Youtube Dl Firefox Addon.
 
 Copyright (C) 2020  Thibaut Decombe. 
+
 Youtube Dl Firefox Addon is available under the MIT license. See the LICENSE file for more info.
