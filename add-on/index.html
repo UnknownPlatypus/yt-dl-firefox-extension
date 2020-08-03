@@ -1,9 +1,24 @@
-<meta charset="UTF-8">
+<!DOCTYPE html>
+
 <html>
-    <body>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="index.css">
+    </head>
+
+<body>
+    <div>
         <button id='audio_M4a'>M4a</button>
         <button id='audio_mp3'>Mp3</button>
         <button id='video'>Mp4</button>
-    </body>
+    </div>  
+    <div id="progress-bar" class="hidden">
+        <div class="center-text text-80">Downloading...</div>
+        <div class="light-grey round-xlarge">
+            <div class="container red round-xlarge center-text" style="width:45%">45%</div>
+        </div> 
+    </div>
     <script src="script.js"></script>
+</body>
+
 </html>

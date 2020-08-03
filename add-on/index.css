@@ -1,0 +1,22 @@
+/* Paddings */
+.center-text{text-align:center!important;padding:2%}
+.hidden{
+    display: none;
+}
+
+/* Rounded progress bar */
+.container:after,.container:before,.panel:after,.panel:before,.row:after,.row:before,.row-padding:after,.row-padding:before,
+.round-small{border-radius:2px}.round,.round-medium{border-radius:4px}.round-large{border-radius:8px}.round-xlarge{border-radius:16px}.round-xxlarge{border-radius:32px}
+
+/* Colors */
+.light-grey,.hover-light-grey:hover,.light-gray,.hover-light-gray:hover{color:#000!important;background-color:#f1f1f1!important}
+.blue,.hover-blue:hover{color:#fff!important;background-color:#2196F3!important}
+.red,.hover-red:hover{color:#fff!important;background-color:#f44336!important;font-size: 100%;}
+
+/* Text size */
+.text-80{font-size:80%}
+.text-60{font-size:60%}
+.text-40{font-size:40%}
+.text-20{font-size:20%}
+
+

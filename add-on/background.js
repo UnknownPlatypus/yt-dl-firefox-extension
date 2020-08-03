@@ -15,6 +15,7 @@ port.onMessage.addListener((response) => {
     'title': 'Download Completed !',
     'message': response,
   });
+  browser.runtime.sendMessage("Complete")
 });
 
 /*
@@ -22,14 +23,15 @@ Listen for messages from the content script.
 */
 
 browser.runtime.onMessage.addListener(function(message) {
-  //console.log('getting tab url : ' + tab.url);
-  console.log('getting button message :' + message)
-  function logTabs(tabs) {
-    let tab = tabs[0]; // Safe to assume there will only be one result
-    console.log(tab.url);
-  port.postMessage(message+tab.url)
-} browser.tabs.query({currentWindow: true, active: true}).then(logTabs, console.error);
-  //port.postMessage(tab.url);
+  if(message!="Complete"){
+    console.log('getting button message :' + message)
+    function logTabs(tabs) {
+      let tab = tabs[0]; // Safe to assume there will only be one result
+      console.log(tab.url);
+    port.postMessage(message+tab.url)
+    } 
+  browser.tabs.query({currentWindow: true, active: true}).then(logTabs, console.error);
+  } 
 });
 
 
