@@ -5,12 +5,13 @@ import os
 import shutil
 import pathlib
 import winreg
-
+success=0
 
 ########## Installer youtube-dl ##########
 yt_dl = subprocess.run('pip install youtube-dl --upgrade',shell=True,capture_output=True,text=True)
 if yt_dl.returncode==0:
     print("1. SUCCESS : " + yt_dl.stdout)
+    success+=1
 else:
     print("1. ERROR : " + yt_dl.stderr)
 
@@ -26,6 +27,7 @@ except OSError:
     print ("2. ERROR : Creation of the directory %s failed" % path1)
 else:
     print ("2. SUCCESS : Successfully created the directory %s " % path1)
+    success+=1
 
 
 
@@ -39,6 +41,7 @@ except OSError as err:
     print("3. ERROR :" + err)
 else:
     print("3. SUCCESS : FFMPEG was successfully installed to C:/youtube_dl/FFMPEG")
+    success+=1
 
 
 
@@ -55,6 +58,7 @@ except OSError as err2:
     print("4.1 ERROR : "+ err2)
 else:
     print ("4.1 SUCCESS : Successfully created the directory %s " % dir_path)
+    success+=1
 
 # Create "config.txt"
 filepath=os.path.join(dir_path,"config.txt")
@@ -76,6 +80,7 @@ f.close()
 
 if os.path.isfile(filepath):
     print("4.2 SUCCESS : config file was created")
+    success+=1
 else:
     print("4.2. ERROR : config file is missing")
 
@@ -92,6 +97,7 @@ except OSError as err:
     print(err)
 else:
     print("5.1 SUCCESS : App was successfully installed to C:/youtube_dl/app")
+    success+=1
 
 
 # Add Native Messaging Registry Keys
@@ -106,3 +112,11 @@ except OSError as err:
     print(err)
 else:
     print("5.2 SUCCESS : Registry Key was created")
+    success+=1
+
+########## Print if the installation went well ##########
+if success==7:
+    print("\nThe installation is successful")
+else:
+    print("\nSomething went wrong. Please check errors messages")
+

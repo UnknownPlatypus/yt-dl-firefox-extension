@@ -27,8 +27,6 @@
   "permissions": [
     "nativeMessaging",
     "notifications",
-    "activeTab",
-    "<all_urls>",
-    "tabs"
+    "activeTab"
   ]
 }
