@@ -1,10 +1,8 @@
 /* Paddings */
-
 .center-text{text-align:center!important;padding:2%}
-
-.hide{display: none;}
-.progress-bar{padding-top: 0%;}
-
+.hidden{
+    display: none;
+}
 
 /* Rounded progress bar */
 .container:after,.container:before,.panel:after,.panel:before,.row:after,.row:before,.row-padding:after,.row-padding:before,
@@ -20,11 +18,5 @@
 .text-60{font-size:60%}
 .text-40{font-size:40%}
 .text-20{font-size:20%}
-/*
 
-
-
-
-
-*/
 
