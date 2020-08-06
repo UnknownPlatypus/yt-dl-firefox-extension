@@ -24,8 +24,9 @@ The addon only display most commun formats : m4a (Native audio format for YT), m
 
 ## Prerequisites
 
-1. Needs [Python](https://www.python.org/downloads/windows/) installed. **Don't forget to check "ADD Python to Path"** and to "Disable PATH length limit"
-2. This has only been tested on Windows. Mac & Linux users might have to make some changes
+1. Needs [Mozilla Firefox](https://www.mozilla.org/fr/firefox/new/) installed.
+2. Needs [Python](https://www.python.org/downloads/windows/) installed. **Don't forget to check "ADD Python to Path"** and to "Disable PATH length limit"
+3. This has only been tested on Windows. Mac & Linux users might have to make some changes
 
 ## Installation
 
