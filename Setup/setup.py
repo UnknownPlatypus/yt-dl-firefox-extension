@@ -72,6 +72,7 @@ Lines=["# Lines starting with # are comments \n","\n",
 "--no-mtime \n","\n",
 "# Save in Download directory \n",
 "-o ~/Downloads/%(title)s.%(ext)s \n","\n",
+"--ffmpeg-location C:/youtube_dl/FFMPEG/bin \n","\n",
 "# convert to mp3 \n",
 "# --extract-audio --audio-format mp3]"]
 
