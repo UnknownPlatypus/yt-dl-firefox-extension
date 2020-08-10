@@ -17,15 +17,23 @@ browser.runtime.onMessage.addListener((response) => {
         document.querySelector("#progress-bar").classList.add("hidden");
     }
     if (response[0]=="PROG"){
+        // Progression percent
         percent=response[1];
-        percentFloat=percent.substring(0,response[1].length-1);
-        float_val=parseFloat(percentFloat);
+        percent2=percent.substring(0,response[1].length-1);
+        percentFloat=parseFloat(percent2);
+        // Total DL size
         sizeDL=response[2];
-        sizeDLFloat=sizeDL.substring(0,sizeDL-3)
+        sizeDLFloat=parseFloat(sizeDL.substring(0,sizeDL.length-3))
+        partDL=(sizeDLFloat*percentFloat/100).toFixed(2)
+        // Real-time Speed value
         valSpeed="Downloading... "+ response[3];
-        document.querySelector("#prog").value=float_val;
-        document.querySelector("#perc").innerHTML=percent + " / "+ sizeDL;
+
+        // Update HTML
+        document.querySelector("#prog").value=percentFloat;
+        document.querySelector("#perc").innerHTML=partDL + " / "+ sizeDL;
         document.querySelector("#speed").innerHTML=valSpeed;
+        // Verifier si meilleure astuce 
+        document.querySelector("#progress-bar").classList.remove("hidden");
     }
 
   })
