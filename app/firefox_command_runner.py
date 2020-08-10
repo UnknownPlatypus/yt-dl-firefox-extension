@@ -32,47 +32,67 @@ def sendMessage(encodedMessage):
     sys.stdout.buffer.write(encodedMessage['content'])
     sys.stdout.buffer.flush()
 
+# Execute a commandline program with printed output
+def execute(cmd):
+    popen = subprocess.Popen(cmd, stdout=subprocess.PIPE, universal_newlines=True)
+    for stdout_line in iter(popen.stdout.readline, ""):
+        yield stdout_line 
+    popen.stdout.close()
+    return_code = popen.wait()
+    if return_code:
+        error_code=subprocess.CalledProcessError(return_code, cmd)
+        res="The file couldn't be downloaded with error code : " + error_code
+        sendMessage(encodeMessage(res))
+        logging.warning(res)
+        raise error_code
+        
+
 while True:
     # receivedMessage is audio_format+url concatenated
     receivedMessage = getMessage()
     audio_format=receivedMessage[0:3]
     url=receivedMessage[3:]
+    Lines=[]
+    
+    # Adjust audio format cmd
+    if(audio_format=='m4a'):
+        cmd = ["youtube-dl","-f","bestaudio[ext=m4a]","--ffmpeg-location","C:/youtube_dl/FFMPEG/bin","--no-mtime","-w",url] 
+    elif(audio_format=='mp3'):
+        cmd = ["youtube-dl","-f","bestaudio[ext=m4a]","--ffmpeg-location","C:/youtube_dl/FFMPEG/bin","--no-mtime","-w","--extract-audio","--audio-format","mp3",url]
+    else:
+        cmd = ["youtube-dl","-f","bestvideo[ext=mp4]+bestaudio[ext=m4a]","--ffmpeg-location","C:/youtube_dl/FFMPEG/bin","--no-mtime","-w",url]
+    logging.warning(cmd)
 
     # exec yt_dl program
-    if(audio_format=='m4a'):
-        yt_dl = subprocess.run('youtube-dl -f bestaudio[ext=m4a] --ffmpeg-location C:/youtube_dl/FFMPEG/bin --no-mtime -w -o ~/Downloads/%(title)s.%(ext)s '+url,shell=True,capture_output=True,text=True)
-    elif(audio_format=='mp3'):
-        yt_dl = subprocess.run('youtube-dl -f bestaudio[ext=m4a] --ffmpeg-location C:/youtube_dl/FFMPEG/bin --no-mtime -w -o ~/Downloads/%(title)s.%(ext)s --extract-audio --audio-format "mp3" '+url,shell=True,capture_output=True,text=True)
-    else:
-        yt_dl = subprocess.run('youtube-dl -f bestvideo[ext=mp4]+bestaudio[ext=m4a] --ffmpeg-location C:/youtube_dl/FFMPEG/bin --no-mtime -w -o ~/Downloads/%(title)s.%(ext)s '+url,shell=True,capture_output=True,text=True)
-    logging.warning(yt_dl.stdout)
+    for x in execute(cmd):
+        x=x.strip()
+        Lines.append(x)
+        part=Lines[-1].split()
+        sendMessage(encodeMessage(["PROG",part]))
+
+
+    # Progression information
 
     # Gather logs send a notification when download ends
-    if yt_dl.returncode==0:
-        Lines=yt_dl.stdout.splitlines() #yt_dl logs
-        Notif=[] 
-        for x in Lines:
-            if(x.startswith('[download] 100%')):
-                mes2="Download : "+x.strip()[11:]
-                logging.warning(mes2)
-                Notif.append(mes2.strip())
-            elif(x.startswith('[download] Destination:') and audio_format != "mp4"):
-                mes1=x[11:-3]+audio_format
-                logging.warning(mes1)
-                Notif.append(mes1.strip())
-            elif(x.startswith('[ffmpeg] Merging formats')):
-                mes="Destination: " + x[31:-1]
-                logging.warning(mes)
-                Notif.append(mes.strip())
-        logging.warning(Notif)
-        fullNotif=""
-        for i in range(len(Notif)-1):
-            fullNotif += Notif[i]
-            fullNotif += "\n" 
-        fullNotif += Notif[-1]
-        sendMessage(encodeMessage(fullNotif))
-    else :
-        error_code=yt_dl.stderr
-        res="The file couldn't be downloaded with error code : " + error_code
-        sendMessage(encodeMessage(res))
-        logging.warning(res)
+    End_Notif=[] 
+    for x in Lines:
+        if(x.startswith('[download] 100%')):
+            mes2="Download : "+x.strip()[11:]
+            logging.warning(mes2)
+            End_Notif.append(mes2.strip())
+        elif(x.startswith('[download] Destination:') and audio_format != "mp4"):
+            mes1=x[11:-3]+audio_format
+            logging.warning(mes1)
+            End_Notif.append(mes1.strip())
+        elif(x.startswith('[ffmpeg] Merging formats')):
+            mes="Destination: " + x[31:-1]
+            logging.warning(mes)
+            End_Notif.append(mes.strip())
+    logging.warning(End_Notif)
+    fullNotif=""
+    for i in range(len(End_Notif)-1):
+        fullNotif += End_Notif[i]
+        fullNotif += "\n" 
+    fullNotif += End_Notif[-1]
+    sendMessage(encodeMessage(["END",fullNotif]))
+
