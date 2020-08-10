@@ -64,7 +64,8 @@ If you want to use youtube-dl from command line you need to add FFMPEG to system
 ## Troubleshooting
 
 1. If you experience youtube-dl errors message, it's highly possible that youtube changed something so the program is not working anymore. However, a fix is usually found within 24h so you just have to upgrade your youtube-dl version by using this command in a windows shell :
-    pip install --upgrade youtube-dl
+
+`pip install --upgrade youtube-dl`
 
 ## License
 
