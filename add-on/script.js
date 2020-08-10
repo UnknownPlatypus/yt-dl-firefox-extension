@@ -30,8 +30,8 @@ browser.runtime.onMessage.addListener((response) => {
 
         // Update HTML
         document.querySelector("#prog").value=percentFloat;
-        document.querySelector("#perc").innerHTML=partDL + " / "+ sizeDL;
-        document.querySelector("#speed").innerHTML=valSpeed;
+        document.querySelector("#perc").textContent=partDL + " / "+ sizeDL;
+        document.querySelector("#speed").textContent=valSpeed;
         // Verifier si meilleure astuce 
         document.querySelector("#progress-bar").classList.remove("hidden");
     }
