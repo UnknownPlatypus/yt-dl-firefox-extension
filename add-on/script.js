@@ -1,15 +1,41 @@
+// Addon Opt-in actions
+window.addEventListener("load", function() {
+    // set up the appearance of the popup depending on the outcome of the opt-in
+    browser.storage.local.get("optInShown", function(result) {
+      console.log("Setting up UI. result.optInShown:" + result.optInShown);
+      document.getElementById("opt-in-prompt").hidden = result.optInShown;
+      document.getElementById("after-opt-in").hidden = !result.optInShown;
+    });
+  
+    document.getElementById("button-enable").addEventListener(
+      "click",
+      function() {
+        browser.storage.local.set({ "optIn" : true, "optInShown" : true });
+        window.close();
+    });
+  
+    document.getElementById("button-cancel").addEventListener(
+      "click",
+      function() {
+        browser.storage.local.set({ "optIn" : false, "optInShown" : false });
+        window.close();
+    });
+  });
+
+
+// Addon button actions
 document.getElementById('audio_M4a').addEventListener('click', function(){
     browser.runtime.sendMessage("m4a");
     document.querySelector("#progress-bar").classList.remove("hidden");
 })
 document.getElementById('audio_mp3').addEventListener('click', function(){
     browser.runtime.sendMessage("mp3");
-    document.querySelector("#progress-bar").classList.add("hidden");
+    document.querySelector("#progress-bar").classList.remove("hidden");
 })
 document.getElementById('video').addEventListener('click', function(){
     browser.runtime.sendMessage("mp4")
+    document.querySelector("#progress-bar").classList.remove("hidden");
 })
-
 
 // Listen for background script message
 browser.runtime.onMessage.addListener((response) => {
@@ -37,3 +63,5 @@ browser.runtime.onMessage.addListener((response) => {
     }
 
   })
+
+
