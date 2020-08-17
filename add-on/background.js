@@ -13,7 +13,7 @@ port.onMessage.addListener((response) => {
   if(response[0]=="END"){
   browser.notifications.create({
     'type': 'basic',
-    'iconUrl': browser.extension.getURL('icons/YTIcon.png'),
+    'iconUrl': browser.extension.getURL('icons/YT_icon.png'),
     'title': 'Download Completed !',
     'message': response[1],
   });
