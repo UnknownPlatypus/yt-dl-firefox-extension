@@ -9,7 +9,14 @@ document.getElementById('audio_mp3').addEventListener('click', function(){
 document.getElementById('video').addEventListener('click', function(){
     browser.runtime.sendMessage("mp4")
 })
-
+document.getElementById('format').addEventListener('click', function(){
+    //browser.runtime.sendMessage("m4a");
+    var x = document.getElementById("dropdown");
+    var option = document.createElement("option");
+    option.text = "Kiwi";
+    
+    x.add(option, x[0]);
+})
 
 // Listen for background script message
 browser.runtime.onMessage.addListener((response) => {
