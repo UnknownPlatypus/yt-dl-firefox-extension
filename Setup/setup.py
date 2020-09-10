@@ -58,7 +58,8 @@ try:
     os.mkdir(dir_path)
 except OSError as err2:
     print ("4.1 ERROR : Creation of the directory %s failed" % dir_path)
-    print("4.1 ERROR : "+ err2)
+    print("4.1 ERROR : ")
+    print(err2)
     raise
 else:
     print ("4.1 SUCCESS : Successfully created the directory %s " % dir_path)
