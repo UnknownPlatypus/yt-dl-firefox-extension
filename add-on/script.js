@@ -1,27 +1,33 @@
+////////// Plugin event listeners //////////
+// 3 Main clicks
 document.getElementById('audio_M4a').addEventListener('click', function(){
     browser.runtime.sendMessage("m4a");
     document.querySelector("#progress-bar").classList.remove("hidden");
 })
 document.getElementById('audio_mp3').addEventListener('click', function(){
     browser.runtime.sendMessage("mp3");
-    document.querySelector("#progress-bar").classList.add("hidden");
+    document.querySelector("#progress-bar").classList.remove("hidden");
 })
 document.getElementById('video').addEventListener('click', function(){
     browser.runtime.sendMessage("mp4")
+    document.querySelector("#progress-bar").classList.remove("hidden");
 })
+// Other formats
 document.getElementById('format').addEventListener('click', function(){
     // Look for other formats
     browser.runtime.sendMessage("format");
     document.getElementById('load-format').classList.remove("hidden");
-    document.getElementById('format').classList.add("hidden");
-    
-    
-    
-    
-    
+    document.getElementById('format').classList.add("hidden");    
+})
+document.getElementById('DL').addEventListener('click', function(){
+    var e = document.getElementById("dropdown");
+    var strUser = e.value;
+    console.log(strUser)
+    browser.runtime.sendMessage(strUser)
+    //document.querySelector("#progress-bar").classList.remove("hidden");
 })
 
-// Listen for background script message
+////////// Listen for background script message //////////
 browser.runtime.onMessage.addListener((response) => {
     if (response=="Complete"){
         document.querySelector("#progress-bar").classList.add("hidden");
@@ -56,11 +62,14 @@ browser.runtime.onMessage.addListener((response) => {
             console.log(desc)
             var option = document.createElement("option");
             option.text = desc;
-            option.value = x[0]
             x.add(option, x[-1]);
+            option.value = formats[a][0]
         }
+        option.selected = "selected"
         // Reveal Dropdown
-        x.classList.remove("hidden");
+        document.getElementById('load-format').classList.add("hidden");
+        document.getElementById("ddMenu").classList.remove("hidden");
+        
     }
 
   })
