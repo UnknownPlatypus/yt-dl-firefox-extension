@@ -12,19 +12,14 @@
         <button id='audio_mp3'>Mp3</button>
         <button id='video'>Mp4</button>
     </div>
+    <p class="center-text text-80">OR</p>
     <div>
-        <label>Other formats :</label>
-        <select id="dropdown">
+        <button id="format" class="full-width">Other formats</button>
+        <div id="load-format" class="hidden center-text full-width">Loading...</div>
+        <select id="dropdown" class="hidden full-width">
             <option value="free">Free</option> 
-            <option value="basic">Basic</option> 
-        </select>
-        
-    </div>
-    <div>
-        <button id="format"> 
-            Add option 
-        </button> 
-    </div>  
+        </select> 
+    </div>      
     <div id="progress-bar" class="hidden">
         <div id="speed" class="center-text text-80">Downloading...</div>
         <div style="display:flex">

@@ -10,12 +10,15 @@ document.getElementById('video').addEventListener('click', function(){
     browser.runtime.sendMessage("mp4")
 })
 document.getElementById('format').addEventListener('click', function(){
-    //browser.runtime.sendMessage("m4a");
-    var x = document.getElementById("dropdown");
-    var option = document.createElement("option");
-    option.text = "Kiwi";
+    // Look for other formats
+    browser.runtime.sendMessage("format");
+    document.getElementById('load-format').classList.remove("hidden");
+    document.getElementById('format').classList.add("hidden");
     
-    x.add(option, x[0]);
+    
+    
+    
+    
 })
 
 // Listen for background script message
@@ -41,6 +44,23 @@ browser.runtime.onMessage.addListener((response) => {
         document.querySelector("#speed").textContent=valSpeed;
         // Verifier si meilleure astuce 
         document.querySelector("#progress-bar").classList.remove("hidden");
+    }
+    if (response[0]=="FORMAT"){
+        formats=response[1]
+        // Add dropdown options
+        var x = document.getElementById("dropdown");
+        console.log(formats)
+        for(a in formats){
+            console.log(formats[a])
+            desc=formats[a][1]+"("+formats[a][2]+")"+" - "+formats[a][3];
+            console.log(desc)
+            var option = document.createElement("option");
+            option.text = desc;
+            option.value = x[0]
+            x.add(option, x[-1]);
+        }
+        // Reveal Dropdown
+        x.classList.remove("hidden");
     }
 
   })
