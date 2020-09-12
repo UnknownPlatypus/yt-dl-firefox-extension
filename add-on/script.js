@@ -69,7 +69,6 @@ browser.runtime.onMessage.addListener((response) => {
         // Reveal Dropdown
         document.getElementById('load-format').classList.add("hidden");
         document.getElementById("ddMenu").classList.remove("hidden");
-        
     }
 
   })

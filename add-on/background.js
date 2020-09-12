@@ -14,12 +14,13 @@ port.onMessage.addListener((response) => {
   console.log("Received: ");
   console.log(response);
   if(response[0]=="END"){
-  browser.notifications.create({
+  a = browser.notifications.create({
     'type': 'basic',
     'iconUrl': browser.extension.getURL('icons/YTIcon.png'),
     'title': 'Download Completed !',
     'message': response[1],
   });
+  console.log(a)
   browser.runtime.sendMessage("Complete")
 }
   else if(response[0]=="PROG" && response[1][2]=="of"){
@@ -45,4 +46,9 @@ browser.runtime.onMessage.addListener(function(message) {
     } 
   browser.tabs.query({currentWindow: true, active: true}).then(logTabs, console.error);
   } 
+});
+
+browser.notifications.onClicked.addListener((response) => {
+  console.log("Open Download folder")
+  port.postMessage("OpenDL");
 });
