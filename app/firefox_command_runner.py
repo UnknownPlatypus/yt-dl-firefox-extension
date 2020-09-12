@@ -95,4 +95,3 @@ while True:
         fullNotif += "\n" 
     fullNotif += End_Notif[-1]
     sendMessage(encodeMessage(["END",fullNotif]))
-
