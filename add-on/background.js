@@ -1,15 +1,15 @@
 /*
 On startup, connect to the 'firefox_command_runner' app.
 */
+
 console.log('Starting firefox command runner!')
 var port = browser.runtime.connectNative('firefox_command_runner');
-
-
 
 
 /*
 Listen for messages from the app.
 */
+
 port.onMessage.addListener((response) => {
   console.log("Received: ");
   console.log(response);
@@ -20,7 +20,6 @@ port.onMessage.addListener((response) => {
     'title': 'Download Completed !',
     'message': response[1],
   });
-  console.log(a)
   browser.runtime.sendMessage("Complete")
 }
   else if(response[0]=="PROG" && response[1][2]=="of"){
@@ -47,6 +46,11 @@ browser.runtime.onMessage.addListener(function(message) {
   browser.tabs.query({currentWindow: true, active: true}).then(logTabs, console.error);
   } 
 });
+
+
+/*
+Notification actions
+*/
 
 browser.notifications.onClicked.addListener((response) => {
   console.log("Open Download folder")
