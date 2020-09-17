@@ -25,6 +25,7 @@ try:
     os.mkdir(path1)
 except OSError:
     print ("2. ERROR : Creation of the directory %s failed" % path1)
+    raise
 else:
     print ("2. SUCCESS : Successfully created the directory %s " % path1)
     success+=1
@@ -38,7 +39,9 @@ source=pathlib.Path(__file__).parent.absolute()/'FFMPEG'
 try:
     shutil.move(source.__str__(),"C:\\youtube_dl")
 except OSError as err:
-    print("3. ERROR :" + err)
+    print("3. ERROR :")
+    print(err)
+    raise
 else:
     print("3. SUCCESS : FFMPEG was successfully installed to C:/youtube_dl/FFMPEG")
     success+=1
@@ -55,7 +58,9 @@ try:
     os.mkdir(dir_path)
 except OSError as err2:
     print ("4.1 ERROR : Creation of the directory %s failed" % dir_path)
-    print("4.1 ERROR : "+ err2)
+    print("4.1 ERROR : ")
+    print(err2)
+    raise
 else:
     print ("4.1 SUCCESS : Successfully created the directory %s " % dir_path)
     success+=1
@@ -96,6 +101,7 @@ try:
 except OSError as err:
     print("5.1 ERROR :")
     print(err)
+    raise
 else:
     print("5.1 SUCCESS : App was successfully installed to C:/youtube_dl/app")
     success+=1
@@ -111,6 +117,7 @@ try:
 except OSError as err:
     print("5.2 ERROR :")
     print(err)
+    raise
 else:
     print("5.2 SUCCESS : Registry Key was created")
     success+=1

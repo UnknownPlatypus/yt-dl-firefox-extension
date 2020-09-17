@@ -21,7 +21,7 @@ window.addEventListener("load", function() {
         window.close();
     });
   });
-  
+
 ////////// Plugin Event listeners //////////
 // 3 Main formats
 document.getElementById('audio_M4a').addEventListener('click', function(){
@@ -110,3 +110,5 @@ browser.runtime.onMessage.addListener((response) => {
     }
 
   })
+
+

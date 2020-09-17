@@ -32,7 +32,7 @@ The addon only display most commun formats : m4a (Native audio format for YT), m
 ## Installation
 
 1. Clone/Download this repository
-2. Run the setup_win.bat file to install youtube-dl and necessary dependancies 
+2. Run the setup_win.bat file as ADMIN to install youtube-dl and necessary dependancies 
 3. Install the add on from [Firefox Addons Website](https://addons.mozilla.org/fr/firefox/addon/yt-dl-addon-for-windows/). 
 
 ## How to use this addon
@@ -64,7 +64,7 @@ If you want to use youtube-dl from command line you need to add FFMPEG to system
 
 ## Troubleshooting
 
-If you experience youtube-dl errors message, it's highly possible that youtube changed something so the program is not working anymore. However, a fix is usually found within 24h so you just have to upgrade your youtube-dl version by using this command in a windows shell :
+If you experience youtube-dl errors message, it is highly possible that Youtube changed something making the program not working anymore. However, a fix is usually found within 24h so you just have to upgrade your youtube-dl version by using this command in a windows shell :
 ```shell 
 pip install --upgrade youtube-dl
 ```
