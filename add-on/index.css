@@ -3,6 +3,7 @@
 .hidden{
     display: none;
 }
+.full-width{width:100%}
 
 /* Rounded progress bar */
 .container:after,.container:before,.panel:after,.panel:before,.row:after,.row:before,.row-padding:after,.row-padding:before,
@@ -23,8 +24,6 @@
     display:flex;
     width:100%;
     justify-content: space-between;
-
-
 }
 
 

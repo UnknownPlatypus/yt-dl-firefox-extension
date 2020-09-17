@@ -1,12 +1,15 @@
 /*
 On startup, connect to the 'firefox_command_runner' app.
 */
+
 console.log('Starting firefox command runner!')
 var port = browser.runtime.connectNative('firefox_command_runner');
+
 
 /*
 Listen for messages from the app.
 */
+
 port.onMessage.addListener((response) => {
   console.log("Received: ");
   console.log(response);
@@ -23,6 +26,9 @@ port.onMessage.addListener((response) => {
     values=["PROG",response[1][1],response[1][3],response[1][5]]
     browser.runtime.sendMessage(values)
   }
+  else if(response[0]=="FORMAT"){
+    browser.runtime.sendMessage(response);
+  }
 });
 
 /*
@@ -35,8 +41,18 @@ browser.runtime.onMessage.addListener(function(message) {
     function logTabs(tabs) {
       let tab = tabs[0]; // Safe to assume there will only be one result
       console.log(tab.url);
-    port.postMessage(message+tab.url)
+    port.postMessage(message+tab.url);
     } 
   browser.tabs.query({currentWindow: true, active: true}).then(logTabs, console.error);
   } 
+});
+
+
+/*
+Notification actions
+*/
+
+browser.notifications.onClicked.addListener((response) => {
+  console.log("Open Download folder")
+  port.postMessage("OpenDL");
 });

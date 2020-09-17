@@ -18,19 +18,31 @@
           <button id="button-cancel" autofocus="true">Cancel</button>
         </div>
     </div>
-    <div id="after-opt-in" hidden="true">
-        <div class="buttons">
+    <div id="after-opt-in" hidden="true"></div>
+        <div id="main" class="buttons">
             <button id='audio_M4a'>M4a</button>
             <button id='audio_mp3'>Mp3</button>
             <button id='video'>Mp4</button>
-        </div>  
-        <div id="progress-bar" class="hidden">
-            <div id="speed" class="center-text text-80">Downloading...</div>
-            <div style="display:flex">
-                <div>
-                    <progress id="prog" max="100" value="0"></progress>
-                    <div id="perc" class="center-text">0%</div>
+        </div>
+        <p class="center-text text-80">OR</p>
+        <div id="aux">
+            <button id="format" class="full-width">Other formats</button>
+            <div id="load-format" class="hidden center-text full-width">Loading...</div>
+            <div id="ddMenu" class="hidden">
+                <div id="ddMenu" class="buttons">
+                    <select id="dropdown" class="full-width">
+                        
+                    </select>
+                    <button id="DL">DL</button>
                 </div>
+            </div>   
+        </div>
+            
+        <div id="progress-bar" class="hidden full-width">
+            <div id="speed" class="center-text text-80">  Downloading...</div>
+            <div>
+                <progress id="prog" max="100" value="0" class="buttons"></progress>
+                <div id="perc" class="center-text">0%</div>
             </div>
         </div>
     </div>
