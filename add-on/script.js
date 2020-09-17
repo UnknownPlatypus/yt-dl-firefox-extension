@@ -2,14 +2,20 @@
 // 3 Main formats
 document.getElementById('audio_M4a').addEventListener('click', function(){
     browser.runtime.sendMessage("m4a");
+    document.getElementById("aux").classList.add("hidden");
+    document.querySelector("p").classList.add("hidden");
     document.querySelector("#progress-bar").classList.remove("hidden");
 })
 document.getElementById('audio_mp3').addEventListener('click', function(){
     browser.runtime.sendMessage("mp3");
+    document.getElementById("aux").classList.add("hidden");
+    document.querySelector("p").classList.add("hidden");
     document.querySelector("#progress-bar").classList.remove("hidden");
 })
 document.getElementById('video').addEventListener('click', function(){
-    browser.runtime.sendMessage("mp4")
+    browser.runtime.sendMessage("mp4");
+    document.getElementById("aux").classList.add("hidden");
+    document.querySelector("p").classList.add("hidden");
     document.querySelector("#progress-bar").classList.remove("hidden");
 })
 
@@ -24,6 +30,9 @@ document.getElementById('DL').addEventListener('click', function(){
     var strUser = e.value;
     console.log(strUser)
     browser.runtime.sendMessage(strUser)
+    document.querySelector("#main").classList.remove("buttons");
+    document.querySelector("#main").classList.add("hidden");
+    document.querySelector("p").classList.add("hidden");
     document.querySelector("#progress-bar").classList.remove("hidden");
 })
 
@@ -38,7 +47,7 @@ browser.runtime.onMessage.addListener((response) => {
         percent2 = percent.substring(0,response[1].length-1);
         percentFloat=parseFloat(percent2);
         // Total DL size
-        sizeDL = esponse[2];
+        sizeDL = response[2];
         sizeDLFloat = parseFloat(sizeDL.substring(0,sizeDL.length-3))
         partDL = (sizeDLFloat*percentFloat/100).toFixed(2)
         // Real-time Speed value
@@ -58,7 +67,7 @@ browser.runtime.onMessage.addListener((response) => {
         
         for(a in formats){
             //console.log(formats[a])
-            desc = formats[a][1]+"("+formats[a][2]+")"+" - "+formats[a][3];
+            desc = formats[a][1]+" ("+formats[a][2]+")"+" - "+formats[a][3];
             console.log(desc)
             var option = document.createElement("option");
             option.text = desc;
