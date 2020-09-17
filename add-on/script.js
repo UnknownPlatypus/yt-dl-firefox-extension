@@ -42,6 +42,7 @@ browser.runtime.onMessage.addListener((response) => {
         document.querySelector("#progress-bar").classList.add("hidden");
     }
     if (response[0]=="PROG"){
+        console.log(response)
         // Progression percent
         percent = response[1];
         percent2 = percent.substring(0,response[1].length-1);
@@ -51,7 +52,11 @@ browser.runtime.onMessage.addListener((response) => {
         sizeDLFloat = parseFloat(sizeDL.substring(0,sizeDL.length-3))
         partDL = (sizeDLFloat*percentFloat/100).toFixed(2)
         // Real-time Speed value
-        valSpeed="Downloading... "+ response[3];
+        speedDL=response[3]
+        if(speedDL!=null){
+            valSpeed="Downloading... "+ speedDL;
+        }
+        
 
         // Update HTML
         document.querySelector("#prog").value=percentFloat;

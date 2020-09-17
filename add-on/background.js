@@ -14,7 +14,7 @@ port.onMessage.addListener((response) => {
   console.log("Received: ");
   console.log(response);
   if(response[0]=="END"){
-  a = browser.notifications.create({
+  browser.notifications.create({
     'type': 'basic',
     'iconUrl': browser.extension.getURL('icons/YTIcon.png'),
     'title': 'Download Completed !',
