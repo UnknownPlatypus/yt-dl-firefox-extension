@@ -50,7 +50,8 @@ while True:
     receivedMessage = getMessage()
 
     if(receivedMessage=="OpenDL"):
-       subprocess.call("explorer C:\\Downloads") 
+        DL_Folder=os.path.expanduser("~")+"\\Downloads"    
+        subprocess.call('explorer '+ DL_Folder) 
 
     elif(receivedMessage[0:6]=="format"):
         url = receivedMessage[6:]
