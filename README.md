@@ -73,6 +73,6 @@ pip install --upgrade youtube-dl
 
 This program is Youtube Dl Firefox Addon.
 
-Copyright (C) 2020  Thibaut Decombe. 
+Copyright (C) 2020  UnknownPlatypus. 
 
 Youtube Dl Firefox Addon is available under the MIT license. See the LICENSE file for more info.
